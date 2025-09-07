@@ -1,0 +1,1220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Team KalkAI</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            overflow-x: hidden;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #FFFDF2;
+            color: #1a1a1a;
+            line-height: 1.6;
+            overflow-x: hidden;
+            width: 100%;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            width: 100%;
+        }
+
+        /* Header */
+        .header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 253, 242, 0.95);
+            backdrop-filter: blur(20px);
+            border-bottom: 2px solid #1a1a1a;
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+            text-decoration: none;
+        }
+
+        .logo:hover {
+            transform: scale(1.05);
+        }
+
+        .logo img {
+            height: 65px;
+            width: auto;
+        }
+
+        .logo-text {
+            font-size: 1.8rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #174D38, #4D1717);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: #1a1a1a;
+            text-decoration: none;
+            font-weight: 700;
+            transition: all 0.3s ease;
+            padding: 0.8rem 1.5rem;
+            border-radius: 8px;
+            border: 2px solid transparent;
+        }
+
+        .nav-links a:hover {
+            background: linear-gradient(135deg, #174D38, #4D1717);
+            color: #F2F2F2;
+            border: 2px solid #174D38;
+            transform: translateY(-2px);
+        }
+
+        /* Contact Hero */
+        .contact-hero {
+            padding: 120px 0 80px;
+            text-align: center;
+            background: linear-gradient(135deg, rgba(23, 77, 56, 0.05), rgba(77, 23, 23, 0.05));
+            position: relative;
+            overflow: hidden;
+        }
+
+        .contact-hero h1 {
+            font-size: 4rem;
+            font-weight: 900;
+            background: linear-gradient(135deg, #174D38, #4D1717);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 1rem;
+        }
+
+        .contact-hero p {
+            font-size: 1.3rem;
+            color: #4D1717;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Leader Profile Section */
+        .leader-profile {
+            padding: 80px 0;
+            background: rgba(255, 255, 255, 0.5);
+        }
+
+        .profile-card {
+            display: grid;
+            grid-template-columns: 300px 1fr;
+            gap: 3rem;
+            max-width: 900px;
+            margin: 0 auto;
+            background: #FFFFFF;
+            padding: 3rem;
+            border-radius: 25px;
+            border: 3px solid rgba(23, 77, 56, 0.2);
+            box-shadow: 0 15px 40px rgba(23, 77, 56, 0.1);
+            align-items: center;
+        }
+
+        .profile-images {
+            text-align: center;
+            position: relative;
+        }
+
+        .profile-avatar {
+            width: 200px;
+            height: 200px;
+            background: linear-gradient(135deg, #174D38, #4D1717);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto;
+            position: relative;
+            box-shadow: 0 10px 30px rgba(23, 77, 56, 0.3);
+            transition: all 0.3s ease;
+            overflow: hidden;
+        }
+
+        .profile-avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 50%;
+        }
+
+        .profile-avatar:hover {
+            transform: scale(1.05);
+            box-shadow: 0 15px 40px rgba(23, 77, 56, 0.4);
+        }
+
+        .avatar-initials {
+            font-size: 4rem;
+            font-weight: 900;
+            color: #F2F2F2;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .avatar-badge {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            width: 50px;
+            height: 50px;
+            background: #FFFFFF;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            border: 3px solid #174D38;
+            box-shadow: 0 4px 12px rgba(23, 77, 56, 0.3);
+        }
+
+        .profile-main img {
+            width: 200px;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 5px solid #174D38;
+            box-shadow: 0 10px 30px rgba(23, 77, 56, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .profile-main img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 15px 40px rgba(23, 77, 56, 0.4);
+        }
+
+        .profile-content h2 {
+            font-size: 2.5rem;
+            font-weight: 900;
+            background: linear-gradient(135deg, #174D38, #4D1717);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 0.5rem;
+        }
+
+        .profile-title {
+            font-size: 1.2rem;
+            color: #4D1717;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .profile-description {
+            color: #1a1a1a;
+            line-height: 1.8;
+            margin-bottom: 2rem;
+            font-size: 1.1rem;
+        }
+
+        .profile-links {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .profile-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.8rem 1.5rem;
+            background: linear-gradient(135deg, #174D38, #4D1717);
+            color: #F2F2F2;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            font-size: 0.9rem;
+        }
+
+        .profile-link:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(23, 77, 56, 0.3);
+        }
+
+        .profile-link.linkedin:hover {
+            background: linear-gradient(135deg, #0077b5, #004d7a);
+        }
+
+        .profile-link.email:hover {
+            background: linear-gradient(135deg, #ea4335, #d33b2c);
+        }
+
+        .profile-link.phone:hover {
+            background: linear-gradient(135deg, #25d366, #128c7e);
+        }
+
+        /* Contact Section */
+        .contact-section {
+            padding: 80px 0;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            margin-top: 3rem;
+        }
+
+        .contact-info {
+            background: #FFFFFF;
+            padding: 3rem;
+            border-radius: 25px;
+            border: 3px solid rgba(23, 77, 56, 0.2);
+            box-shadow: 0 15px 40px rgba(23, 77, 56, 0.1);
+        }
+
+        .contact-info h3 {
+            font-size: 2rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #174D38, #4D1717);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 2rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            padding: 1rem;
+            background: rgba(23, 77, 56, 0.05);
+            border-radius: 15px;
+            transition: all 0.3s ease;
+        }
+
+        .contact-item:hover {
+            transform: translateX(10px);
+            background: rgba(23, 77, 56, 0.1);
+        }
+
+        .contact-icon {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, #174D38, #4D1717);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #F2F2F2;
+            font-size: 1.5rem;
+            overflow: hidden;
+        }
+
+        .contact-icon.mentor-photo {
+            background: transparent;
+            border: 2px solid #174D38;
+        }
+
+        .contact-icon img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 50%;
+        }
+
+        .contact-details h4 {
+            font-weight: 700;
+            color: #1a1a1a;
+            margin-bottom: 0.3rem;
+        }
+
+        .contact-details p {
+            color: #4D1717;
+            font-weight: 500;
+        }
+
+        /* Contact Form */
+        .contact-form {
+            background: #FFFFFF;
+            padding: 3rem;
+            border-radius: 25px;
+            border: 3px solid rgba(23, 77, 56, 0.2);
+            box-shadow: 0 15px 40px rgba(23, 77, 56, 0.1);
+        }
+
+        .contact-form h3 {
+            font-size: 2rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #174D38, #4D1717);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 2rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: 600;
+            color: #1a1a1a;
+            margin-bottom: 0.5rem;
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 1rem;
+            border: 2px solid rgba(23, 77, 56, 0.2);
+            border-radius: 10px;
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            background: #FFFDF2;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: #174D38;
+            box-shadow: 0 0 0 3px rgba(23, 77, 56, 0.1);
+        }
+
+        .form-group textarea {
+            height: 120px;
+            resize: vertical;
+        }
+
+        .submit-btn {
+            background: linear-gradient(135deg, #174D38, #4D1717);
+            color: #F2F2F2;
+            border: none;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: 100%;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(23, 77, 56, 0.3);
+        }
+
+        /* Notification Styles */
+        .notification {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            max-width: 400px;
+            padding: 1rem;
+            border-radius: 10px;
+            color: white;
+            font-weight: 600;
+            z-index: 10000;
+            animation: slideIn 0.3s ease;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .notification.success {
+            background: linear-gradient(135deg, #28a745, #20c997);
+        }
+
+        .notification.error {
+            background: linear-gradient(135deg, #dc3545, #c82333);
+        }
+
+        .notification-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .notification button {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+            padding: 0;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.3s ease;
+        }
+
+        .notification button:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateX(100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        /* Quick Contact Cards */
+        .quick-contact {
+            padding: 60px 0;
+            background: rgba(255, 255, 255, 0.5);
+        }
+
+        .quick-contact h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            font-weight: 900;
+            background: linear-gradient(135deg, #174D38, #4D1717);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 3rem;
+        }
+
+        .quick-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .quick-card {
+            background: #FFFFFF;
+            padding: 2rem;
+            border-radius: 20px;
+            border: 3px solid rgba(23, 77, 56, 0.2);
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .quick-card:hover {
+            transform: translateY(-8px);
+            border-color: #174D38;
+            box-shadow: 0 15px 40px rgba(23, 77, 56, 0.2);
+        }
+
+        .quick-card-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #174D38, #4D1717);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            font-size: 2rem;
+            color: #F2F2F2;
+        }
+
+        .quick-card h3 {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #1a1a1a;
+            margin-bottom: 1rem;
+        }
+
+        .quick-card p {
+            color: #4D1717;
+            font-weight: 500;
+        }
+
+        /* Enhanced Mobile Responsiveness */
+        @media screen and (max-width: 768px) {
+            html, body {
+                overflow-x: hidden !important;
+                width: 100% !important;
+                max-width: 100% !important;
+            }
+            
+            * {
+                max-width: 100% !important;
+            }
+            
+            .container {
+                padding: 0 8px !important;
+                max-width: 100% !important;
+                width: 100% !important;
+            }
+            
+            .header {
+                padding: 0.4rem 0 !important;
+                width: 100% !important;
+            }
+            
+            .header-content {
+                flex-direction: column !important;
+                gap: 0.8rem !important;
+                padding: 0.8rem 8px !important;
+                width: 100% !important;
+            }
+            
+            .logo img {
+                height: 35px !important;
+            }
+            
+            .logo-text {
+                font-size: 1.3rem !important;
+            }
+            
+            .nav-links {
+                flex-direction: row !important;
+                gap: 0.4rem !important;
+                flex-wrap: wrap !important;
+                justify-content: center !important;
+                width: 100% !important;
+            }
+            
+            .nav-links a {
+                padding: 0.4rem 0.7rem !important;
+                font-size: 0.75rem !important;
+                white-space: nowrap !important;
+            }
+            
+            .contact-hero {
+                padding: 90px 0 30px !important;
+                text-align: center !important;
+            }
+            
+            .contact-hero h1 {
+                font-size: 1.8rem !important;
+                line-height: 1.2 !important;
+                margin-bottom: 1rem !important;
+                word-wrap: break-word !important;
+            }
+            
+            .contact-hero p {
+                font-size: 0.9rem !important;
+                line-height: 1.4 !important;
+                padding: 0 8px !important;
+                max-width: 95% !important;
+                margin: 0 auto !important;
+            }
+
+            .leader-profile {
+                padding: 30px 0 !important;
+            }
+
+            .contact-grid {
+                grid-template-columns: 1fr !important;
+                gap: 1.5rem !important;
+                margin-top: 1.5rem !important;
+            }
+
+            .profile-card {
+                grid-template-columns: 1fr !important;
+                text-align: center !important;
+                gap: 1.2rem !important;
+                padding: 1.2rem 0.8rem !important;
+                margin: 0 8px !important;
+                width: calc(100% - 16px) !important;
+            }
+
+            .profile-avatar {
+                width: 100px !important;
+                height: 100px !important;
+                margin: 0 auto !important;
+            }
+
+            .avatar-badge {
+                width: 30px !important;
+                height: 30px !important;
+                font-size: 0.9rem !important;
+                bottom: 3px !important;
+                right: 3px !important;
+            }
+
+            .profile-content h2 {
+                font-size: 1.6rem !important;
+                margin-bottom: 0.6rem !important;
+            }
+            
+            .profile-title {
+                font-size: 0.9rem !important;
+                margin-bottom: 0.8rem !important;
+            }
+            
+            .profile-description {
+                font-size: 0.8rem !important;
+                line-height: 1.5 !important;
+                margin-bottom: 1.2rem !important;
+            }
+
+            .profile-links {
+                justify-content: center !important;
+                gap: 0.6rem !important;
+                flex-wrap: wrap !important;
+            }
+            
+            .profile-link {
+                padding: 0.6rem 1rem !important;
+                font-size: 0.8rem !important;
+            }
+
+            .contact-info {
+                padding: 1.2rem 0.8rem !important;
+                margin: 0 8px !important;
+                width: calc(100% - 16px) !important;
+            }
+            
+            .contact-info h3 {
+                font-size: 1.4rem !important;
+                margin-bottom: 1.2rem !important;
+            }
+            
+            .contact-item {
+                margin-bottom: 1.2rem !important;
+                gap: 0.8rem !important;
+                flex-direction: column !important;
+                text-align: center !important;
+                padding: 0.8rem 0.4rem !important;
+            }
+            
+            .contact-icon {
+                width: 35px !important;
+                height: 35px !important;
+                font-size: 1rem !important;
+                flex-shrink: 0 !important;
+                margin: 0 auto !important;
+            }
+            
+            .contact-details h4 {
+                font-size: 0.9rem !important;
+                margin-bottom: 0.4rem !important;
+            }
+            
+            .contact-details p {
+                font-size: 0.8rem !important;
+                line-height: 1.4 !important;
+            }
+
+            .contact-form {
+                padding: 1.2rem 0.8rem !important;
+                margin: 0 8px !important;
+                width: calc(100% - 16px) !important;
+            }
+            
+            .contact-form h3 {
+                font-size: 1.4rem !important;
+                margin-bottom: 1.2rem !important;
+            }
+            
+            .form-group {
+                margin-bottom: 1rem !important;
+            }
+            
+            .form-group label {
+                font-size: 0.8rem !important;
+                margin-bottom: 0.4rem !important;
+            }
+            
+            .form-group input,
+            .form-group textarea,
+            .form-group select {
+                padding: 0.7rem !important;
+                font-size: 0.8rem !important;
+                width: 100% !important;
+                border-radius: 8px !important;
+            }
+            
+            .submit-btn {
+                padding: 0.8rem 1.5rem !important;
+                font-size: 0.85rem !important;
+                width: 100% !important;
+            }
+
+            .quick-contact {
+                padding: 25px 0 !important;
+            }
+            
+            .quick-contact h2 {
+                font-size: 1.6rem !important;
+                margin-bottom: 1.5rem !important;
+            }
+            
+            .quick-grid {
+                grid-template-columns: 1fr !important;
+                gap: 1rem !important;
+            }
+            
+            .quick-card {
+                padding: 1.2rem 0.8rem !important;
+                margin: 0 8px !important;
+                width: calc(100% - 16px) !important;
+            }
+            
+            .quick-card-icon {
+                font-size: 1.5rem !important;
+                margin-bottom: 0.8rem !important;
+                width: 50px !important;
+                height: 50px !important;
+            }
+            
+            .quick-card h3 {
+                font-size: 1.1rem !important;
+                margin-bottom: 0.8rem !important;
+            }
+            
+            .quick-card p {
+                font-size: 0.8rem !important;
+            }
+
+            /* Footer mobile */
+            footer {
+                padding: 2rem 0 !important;
+            }
+            
+            footer p {
+                font-size: 0.8rem !important;
+                padding: 0 8px !important;
+            }
+        }
+
+        /* Extra small devices */
+        @media screen and (max-width: 480px) {
+            .container {
+                padding: 0 5px !important;
+            }
+            
+            .contact-hero h1 {
+                font-size: 1.5rem !important;
+            }
+            
+            .contact-hero p {
+                font-size: 0.8rem !important;
+            }
+            
+            .nav-links a {
+                padding: 0.3rem 0.5rem !important;
+                font-size: 0.7rem !important;
+            }
+            
+            .profile-card {
+                padding: 1rem 0.5rem !important;
+                gap: 1rem !important;
+                margin: 0 5px !important;
+                width: calc(100% - 10px) !important;
+            }
+            
+            .profile-avatar {
+                width: 80px !important;
+                height: 80px !important;
+            }
+            
+            .profile-content h2 {
+                font-size: 1.4rem !important;
+            }
+            
+            .profile-links {
+                gap: 0.4rem !important;
+            }
+            
+            .profile-link {
+                padding: 0.5rem 0.8rem !important;
+                font-size: 0.75rem !important;
+            }
+            
+            .contact-info, .contact-form {
+                padding: 1rem 0.5rem !important;
+                margin: 0 5px !important;
+                width: calc(100% - 10px) !important;
+            }
+            
+            .quick-card {
+                padding: 1rem 0.5rem !important;
+                margin: 0 5px !important;
+                width: calc(100% - 10px) !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <a href="prabandhan-bot.html" class="logo">
+                    <img src="kalkai-logo.svg" alt="KalkAI Logo">
+                </a>
+                <nav>
+                    <ul class="nav-links">
+                        <li><a href="prabandhan-bot.html">Home</a></li>
+                        <li><a href="team.html">Team</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Contact Hero -->
+    <section class="contact-hero">
+        <div class="container">
+            <h1>Get In Touch</h1>
+            <p>Ready to collaborate or have questions about The Prabandhan Bot? We'd love to hear from you. Reach out to Team KalkAI and let's build the future of healthcare together.</p>
+        </div>
+    </section>
+
+    <!-- Team Leader Profile -->
+    <section class="leader-profile">
+        <div class="container">
+            <div class="profile-card">
+                <div class="profile-images">
+                    <div class="profile-main">
+                        <div class="profile-avatar">
+                            <img src="n-bharath-engineering.jpg" alt="N. Bharath - Team Leader">
+                            <div class="avatar-badge">🎓</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="profile-content">
+                    <h2>N. Bharath</h2>
+                    <p class="profile-title">Team Leader - KalkAI</p>
+                    <p class="profile-description">
+                        Leading the development of The Prabandhan Bot, a revolutionary AI-driven healthcare solution for rural communities. 
+                        Passionate about leveraging technology to bridge healthcare gaps and create meaningful social impact.
+                    </p>
+                    <div class="profile-links">
+                        <a href="https://www.linkedin.com/in/n-bharath-2b86311b9/" target="_blank" class="profile-link linkedin">
+                            <span>🔗</span> LinkedIn
+                        </a>
+                        <a href="mailto:n.bharath3430@gmail.com" class="profile-link email">
+                            <span>📧</span> Email
+                        </a>
+                        <a href="tel:+918618698941" class="profile-link phone">
+                            <span>📱</span> Call
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <div class="contact-grid">
+                <!-- Contact Information -->
+                <div class="contact-info">
+                    <h3>Contact Information</h3>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon mentor-photo">
+                            <img src="dr-bahubali-shiragapur.png" alt="Dr. Bahubali Shiragapur">
+                        </div>
+                        <div class="contact-details">
+                            <h4>Project Mentor</h4>
+                            <p>Dr. Bahubali Shiragapur<br>
+                            bahubali-aiml@dsu.edu.in<br>
+                            +91 9890909194</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <div class="contact-icon mentor-photo">
+                            <img src="n-bharath-engineering.jpg" alt="N. Bharath">
+                        </div>
+                        <div class="contact-details">
+                            <h4>Team Leader</h4>
+                            <p>N. Bharath<br>
+                            n.bharath3430@gmail.com<br>
+                            eng24cs0537@dsu.edu.in<br>
+                            +91 8618698941</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <div class="contact-icon">💼</div>
+                        <div class="contact-details">
+                            <h4>LinkedIn Profile</h4>
+                            <p><a href="https://www.linkedin.com/in/n-bharath-2b86311b9/" target="_blank" style="color: #174D38; text-decoration: none; font-weight: 600;">linkedin.com/in/n-bharath-2b86311b9</a></p>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <div class="contact-icon">📱</div>
+                        <div class="contact-details">
+                            <h4>Social Media</h4>
+                            <p>Instagram: @bharath_theunassailable<br>
+                            Follow for project updates</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <div class="contact-icon">🏛️</div>
+                        <div class="contact-details">
+                            <h4>Institution</h4>
+                            <p>Dayananda Sagar University<br>
+                            Computer Science & Engineering<br>
+                            Bangalore, Karnataka</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <div class="contact-icon">🏆</div>
+                        <div class="contact-details">
+                            <h4>Competition</h4>
+                            <p>Smart India Hackathon 2025<br>
+                            Team ID: SIH25049<br>
+                            Domain: Software</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <div class="contact-form">
+                    <h3>Send us a Message</h3>
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="name">Full Name</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="organization">Organization/Institution</label>
+                            <input type="text" id="organization" name="organization">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+                            <select id="subject" name="subject" required>
+                                <option value="">Select a subject</option>
+                                <option value="collaboration">Collaboration Opportunity</option>
+                                <option value="technical">Technical Questions</option>
+                                <option value="demo">Demo Request</option>
+                                <option value="feedback">Feedback</option>
+                                <option value="general">General Inquiry</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" placeholder="Tell us more about your inquiry..." required></textarea>
+                        </div>
+
+                        <button type="submit" class="submit-btn">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quick Contact -->
+    <section class="quick-contact">
+        <div class="container">
+            <h2>Quick Connect</h2>
+            <div class="quick-grid">
+                <div class="quick-card">
+                    <div class="quick-card-icon">📧</div>
+                    <h3>Email Us</h3>
+                    <p>For technical discussions and collaboration opportunities</p>
+                </div>
+
+                <div class="quick-card">
+                    <div class="quick-card-icon">📱</div>
+                    <h3>Call Us</h3>
+                    <p>Direct contact for urgent inquiries and demo requests</p>
+                </div>
+
+                <div class="quick-card">
+                    <div class="quick-card-icon">🎓</div>
+                    <h3>Academic Partnership</h3>
+                    <p>Research collaboration and academic initiatives</p>
+                </div>
+
+                <div class="quick-card">
+                    <div class="quick-card-icon">💼</div>
+                    <h3>Industry Connect</h3>
+                    <p>Business partnerships and implementation opportunities</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer style="background: #FFFDF2; padding: 3rem 0; text-align: center; border-top: 2px solid #174D38;">
+        <div class="container">
+            <div style="display: flex; align-items: center; justify-content: center; gap: 1rem; margin-bottom: 1rem;">
+                <svg width="35" height="35" viewBox="0 0 200 100">
+                    <defs>
+                        <linearGradient id="footerLogoGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                            <stop offset="0%" style="stop-color:#174D38"/>
+                            <stop offset="50%" style="stop-color:#4D1717"/>
+                            <stop offset="100%" style="stop-color:#174D38"/>
+                        </linearGradient>
+                    </defs>
+                    <g fill="#174D38" opacity="0.9">
+                        <circle cx="40" cy="25" r="2"/>
+                        <circle cx="65" cy="15" r="2"/>
+                        <circle cx="85" cy="30" r="2"/>
+                        <circle cx="120" cy="20" r="2"/>
+                        <circle cx="145" cy="35" r="2"/>
+                        <circle cx="170" cy="25" r="2"/>
+                    </g>
+                    <g stroke="#174D38" stroke-width="1" opacity="0.7" fill="none">
+                        <path d="M40,25 L65,15 L85,30 L120,20 L145,35 L170,25"/>
+                    </g>
+                    <text x="10" y="80" font-family="Inter, sans-serif" font-size="20" font-weight="bold" fill="url(#footerLogoGradient)">KALKAI</text>
+                </svg>
+            </div>
+            <p style="color: #1a1a1a; margin-bottom: 0.5rem; font-weight: 600;">Team KalkAI - SIH 2025</p>
+            <p style="color: #666; font-size: 0.9rem;">© 2025 KalkAI. Building the future of healthcare technology.</p>
+        </div>
+    </footer>
+
+    <!-- EmailJS SDK -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    
+    <script>
+        // Initialize EmailJS with your public key
+        (function(){
+            emailjs.init("e28YIk74JeigK347O"); // Your actual EmailJS public key
+        })();
+
+        // Form submission handler with real email functionality
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form data
+            const formData = new FormData(this);
+            const data = Object.fromEntries(formData.entries());
+            
+            // Button states
+            const submitBtn = document.querySelector('.submit-btn');
+            const originalText = submitBtn.textContent;
+            
+            submitBtn.textContent = 'Sending...';
+            submitBtn.disabled = true;
+            submitBtn.style.background = 'linear-gradient(135deg, #f39c12, #e67e22)';
+            
+            // Send actual email using EmailJS
+            emailjs.send("service_ecdnx9s", "template_7w5gizt", {
+                from_name: data.name,
+                from_email: data.email,
+                organization: data.organization || 'Not specified',
+                subject: data.subject,
+                message: data.message,
+                to_email: 'n.bharath3430@gmail.com' // Your email
+            }).then(function(response) {
+                // Success
+                console.log('SUCCESS!', response.status, response.text);
+                submitBtn.textContent = '✅ Message Sent Successfully!';
+                submitBtn.style.background = 'linear-gradient(135deg, #28a745, #20c997)';
+                
+                // Reset form
+                document.getElementById('contactForm').reset();
+                
+                // Show success message
+                showNotification('Your message has been sent successfully! We\'ll get back to you soon.', 'success');
+                
+                setTimeout(() => {
+                    submitBtn.textContent = originalText;
+                    submitBtn.style.background = 'linear-gradient(135deg, #174D38, #4D1717)';
+                    submitBtn.disabled = false;
+                }, 3000);
+                
+            }, function(error) {
+                // Error
+                console.log('FAILED...', error);
+                submitBtn.textContent = '❌ Failed to Send';
+                submitBtn.style.background = 'linear-gradient(135deg, #dc3545, #c82333)';
+                
+                showNotification('Failed to send message. Please try again or contact us directly.', 'error');
+                
+                setTimeout(() => {
+                    submitBtn.textContent = originalText;
+                    submitBtn.style.background = 'linear-gradient(135deg, #174D38, #4D1717)';
+                    submitBtn.disabled = false;
+                }, 3000);
+            });
+        });
+
+        // Notification system
+        function showNotification(message, type) {
+            const notification = document.createElement('div');
+            notification.className = `notification ${type}`;
+            notification.innerHTML = `
+                <div class="notification-content">
+                    <span>${message}</span>
+                    <button onclick="this.parentElement.parentElement.remove()">×</button>
+                </div>
+            `;
+            
+            document.body.appendChild(notification);
+            
+            setTimeout(() => {
+                notification.remove();
+            }, 5000);
+        }
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Add scroll effects to header
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 100) {
+                header.style.background = 'rgba(255, 253, 242, 0.98)';
+                header.style.boxShadow = '0 2px 20px rgba(23, 77, 56, 0.1)';
+            } else {
+                header.style.background = 'rgba(255, 253, 242, 0.95)';
+                header.style.boxShadow = 'none';
+            }
+        });
+    </script>
+</body>
+</html>
