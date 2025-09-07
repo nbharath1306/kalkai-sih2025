@@ -399,113 +399,288 @@
             text-transform: uppercase;
         }
 
-        /* Enhanced Mobile Responsiveness */
-        @media (max-width: 768px) {
+        /* Comprehensive Mobile Responsiveness */
+        @media screen and (max-width: 768px) {
+            html, body {
+                overflow-x: hidden !important;
+                width: 100% !important;
+            }
+            
             .container {
-                padding: 0 15px;
+                padding: 0 10px !important;
+                max-width: 100% !important;
             }
             
             .header {
-                padding: 0.5rem 0;
+                padding: 0.5rem 0 !important;
             }
             
             .header-content {
-                flex-direction: column;
-                gap: 1rem;
-                padding: 1rem 10px;
+                flex-direction: column !important;
+                gap: 1rem !important;
+                padding: 1rem 10px !important;
             }
             
             .logo img {
-                height: 45px;
+                height: 40px !important;
             }
             
             .nav-links {
-                flex-direction: row;
-                gap: 0.8rem;
-                flex-wrap: wrap;
-                justify-content: center;
+                flex-direction: row !important;
+                gap: 0.6rem !important;
+                flex-wrap: wrap !important;
+                justify-content: center !important;
             }
             
             .nav-links a {
-                padding: 0.6rem 1rem;
-                font-size: 0.85rem;
+                padding: 0.5rem 0.8rem !important;
+                font-size: 0.8rem !important;
             }
             
             .team-hero {
-                padding: 120px 0 60px;
+                padding: 100px 0 40px !important;
+                text-align: center !important;
             }
             
             .team-hero h1 {
-                font-size: 2.5rem;
-                line-height: 1.2;
-                margin-bottom: 1rem;
+                font-size: 2rem !important;
+                line-height: 1.2 !important;
+                margin-bottom: 1rem !important;
             }
             
             .team-hero p {
-                font-size: 1.1rem;
-                line-height: 1.5;
+                font-size: 1rem !important;
+                line-height: 1.5 !important;
+                padding: 0 10px !important;
             }
             
             .team-id {
-                font-size: 0.9rem;
-                margin-top: 1.5rem;
+                font-size: 0.85rem !important;
+                margin-top: 1rem !important;
+                padding: 0.8rem 1.5rem !important;
             }
 
             .team-grid {
-                grid-template-columns: 1fr;
-                gap: 2rem;
-                margin-top: 3rem;
+                grid-template-columns: 1fr !important;
+                gap: 1.5rem !important;
+                margin-top: 2rem !important;
             }
             
             .team-member {
-                padding: 2rem 1.5rem;
+                padding: 1.5rem 1rem !important;
+                margin: 0 5px !important;
             }
             
             .member-avatar {
-                width: 100px;
-                height: 100px;
-                margin-bottom: 1.5rem;
+                width: 80px !important;
+                height: 80px !important;
+                margin: 0 auto 1rem !important;
+                font-size: 2rem !important;
             }
             
             .member-name {
-                font-size: 1.3rem;
-                margin-bottom: 0.5rem;
+                font-size: 1.2rem !important;
+                margin-bottom: 0.5rem !important;
+                text-align: center !important;
             }
             
             .member-role {
-                font-size: 1rem;
-                margin-bottom: 1.5rem;
+                font-size: 0.9rem !important;
+                margin-bottom: 1.2rem !important;
+                text-align: center !important;
+            }
+            
+            .member-details {
+                gap: 0.8rem !important;
             }
             
             .detail-item {
-                margin-bottom: 0.8rem;
-                font-size: 0.9rem;
+                padding: 0.6rem 0.8rem !important;
+                font-size: 0.8rem !important;
+                gap: 0.6rem !important;
+            }
+            
+            .detail-icon {
+                width: 30px !important;
+                height: 30px !important;
+                font-size: 1rem !important;
+                flex-shrink: 0 !important;
             }
 
             .mentor-section {
-                padding: 40px 0;
+                padding: 40px 0 !important;
+            }
+            
+            .mentor-section h2 {
+                font-size: 1.8rem !important;
+                margin-bottom: 2rem !important;
             }
             
             .mentor-card {
-                margin: 0 1rem;
-                padding: 2rem 1.5rem;
+                grid-template-columns: 1fr !important;
+                text-align: center !important;
+                gap: 1.5rem !important;
+                padding: 1.5rem 1rem !important;
+                margin: 0 10px !important;
             }
             
-            .mentor-avatar {
-                width: 120px;
-                height: 120px;
+            .mentor-photo {
+                width: 120px !important;
+                height: 120px !important;
+                margin: 0 auto !important;
             }
             
-            .mentor-name {
-                font-size: 1.8rem;
+            .mentor-content h3 {
+                font-size: 1.5rem !important;
+                margin-bottom: 0.5rem !important;
             }
             
             .mentor-title {
-                font-size: 1.1rem;
+                font-size: 0.9rem !important;
+                margin-bottom: 1rem !important;
+            }
+            
+            .mentor-bio {
+                font-size: 0.85rem !important;
+                line-height: 1.5 !important;
+                margin-bottom: 1.5rem !important;
+            }
+            
+            .mentor-contact {
+                justify-content: center !important;
+                gap: 0.8rem !important;
+                flex-wrap: wrap !important;
             }
             
             .contact-item {
-                margin-bottom: 1rem;
+                padding: 0.6rem 1rem !important;
+                font-size: 0.8rem !important;
+            }
+
+            .team-stats {
+                padding: 30px 0 !important;
+            }
+            
+            .team-stats h2 {
+                font-size: 1.8rem !important;
+                margin-bottom: 2rem !important;
+            }
+            
+            .stats-grid {
+                grid-template-columns: 1fr 1fr !important;
+                gap: 1rem !important;
+            }
+            
+            .stat-card {
+                padding: 1.2rem 0.8rem !important;
+            }
+            
+            .stat-card h3 {
+                font-size: 1.8rem !important;
+            }
+            
+            .stat-card p {
+                font-size: 0.8rem !important;
+            }
+
+            .collaboration-section {
+                padding: 30px 0 !important;
+            }
+            
+            .collaboration-section h2 {
+                font-size: 1.8rem !important;
+                margin-bottom: 2rem !important;
+            }
+            
+            .collab-grid {
+                grid-template-columns: 1fr !important;
+                gap: 1.5rem !important;
+            }
+            
+            .collab-card {
+                padding: 1.5rem 1rem !important;
+            }
+            
+            .collab-card h3 {
+                font-size: 1.2rem !important;
+            }
+            
+            .collab-card p {
+                font-size: 0.85rem !important;
+            }
+        }
+
+        /* Extra Small Devices */
+        @media screen and (max-width: 480px) {
+            .container {
+                padding: 0 5px !important;
+            }
+            
+            .team-hero h1 {
+                font-size: 1.7rem !important;
+            }
+            
+            .team-hero p {
+                font-size: 0.9rem !important;
+            }
+            
+            .nav-links a {
+                padding: 0.4rem 0.6rem !important;
+                font-size: 0.75rem !important;
+            }
+            
+            .team-member {
+                padding: 1rem 0.5rem !important;
+            }
+            
+            .member-avatar {
+                width: 70px !important;
+                height: 70px !important;
+                font-size: 1.8rem !important;
+            }
+            
+            .member-name {
+                font-size: 1.1rem !important;
+            }
+            
+            .member-role {
+                font-size: 0.85rem !important;
+            }
+            
+            .detail-item {
+                padding: 0.5rem 0.6rem !important;
+                font-size: 0.75rem !important;
+            }
+            
+            .detail-icon {
+                width: 25px !important;
+                height: 25px !important;
+                font-size: 0.9rem !important;
+            }
+            
+            .mentor-card {
+                padding: 1rem 0.5rem !important;
+            }
+            
+            .mentor-photo {
+                width: 100px !important;
+                height: 100px !important;
+            }
+            
+            .mentor-content h3 {
+                font-size: 1.3rem !important;
+            }
+            
+            .stats-grid {
+                grid-template-columns: 1fr !important;
+                gap: 1rem !important;
+            }
+            
+            .stat-card {
+                padding: 1rem 0.5rem !important;
+            }
+        }
+    </style>
             }
         }
 
