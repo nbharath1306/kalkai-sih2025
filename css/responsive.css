@@ -1,0 +1,24 @@
+/* Mobile-first tweaks and breakpoints */
+@media (max-width: 480px) {
+  :root { --header-h: 74px; }
+  .hide-on-mobile { display: none !important; }
+  .container, .wrapper, main, .section { padding-inline: 14px; }
+  .nav, .nav-links { width: 100%; }
+}
+
+@media (min-width: 768px) {
+  :root { --header-h: 86px; }
+  .hide-on-desktop { display: none !important; }
+  .container, .wrapper, main, .section { width: min(100%, 1100px); }
+}
+
+@media (min-width: 1200px) {
+  :root { --header-h: 92px; }
+  .container, .wrapper, main, .section { width: min(100%, 1280px); }
+}
+
+/* Safety to avoid overflow in grid/rows */
+[class*="col"], [class*="row"], [class*="grid"], [class*="container"] { min-width: 0; }
+
+/* Generic image/card responsiveness */
+.card img { border-radius: 8px; max-width: 100%; height: auto; }
