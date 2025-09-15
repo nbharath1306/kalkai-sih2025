@@ -7,121 +7,12 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/responsive.css">
     
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
-            overflow-x: hidden;
-        }
-
-        body {
-            font-family: 'Inter', sans-serif;
-            background: #FFFDF2;
-            color: #1a1a1a;
-            line-height: 1.6;
-            overflow-x: hidden;
-            position: relative;
-            width: 100%;
-            max-width: 100%;
-        }
-
-        body::before {
-            content: '';
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(135deg, rgba(26, 26, 26, 0.02) 0%, rgba(26, 26, 26, 0.01) 50%, rgba(26, 26, 26, 0.02) 100%);
-            z-index: -1;
-            pointer-events: none;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        /* Header */
-        .header {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            background: rgba(255, 253, 242, 0.98);
-            backdrop-filter: blur(20px);
-            z-index: 1000;
-            padding: 1rem 0;
-            border-bottom: 2px solid #1a1a1a;
-            box-shadow: 0 4px 20px rgba(26, 26, 26, 0.1);
-        }
-
-        .header-content {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        .logo {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            cursor: pointer;
-            transition: transform 0.3s ease;
-            text-decoration: none;
-        }
-
-        .logo:hover {
-            transform: scale(1.05);
-        }
-
-        .logo img {
-            height: 65px;
-            width: auto;
-        }
-
-        .logo-text {
-            font-size: 1.8rem;
-            font-weight: 700;
-            background: linear-gradient(135deg, #174D38, #4D1717);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 2rem;
-            list-style: none;
-        }
-
-        .nav-links a {
-            color: #1a1a1a;
-            text-decoration: none;
-            font-weight: 700;
-            transition: all 0.3s ease;
-            padding: 0.8rem 1.5rem;
-            border-radius: 8px;
-            border: 2px solid transparent;
-        }
-
-        .nav-links a:hover {
-            background: linear-gradient(135deg, #174D38, #4D1717);
-            color: #F2F2F2;
-            border: 2px solid #174D38;
-            transform: translateY(-2px);
-        }
-
+        /* Page-specific styles for index.html */
+        
         /* Hero Section */
         .hero {
             height: 100vh;
