@@ -1,0 +1,90 @@
+/* Responsive CSS - Mobile and tablet optimizations */
+
+/* Tablet and smaller screens */
+@media screen and (max-width: 768px) {
+    html, body {
+        overflow-x: hidden !important;
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+    
+    * {
+        max-width: 100% !important;
+    }
+    
+    .container {
+        padding: 0 10px !important;
+        max-width: 100% !important;
+        width: 100% !important;
+    }
+    
+    .header, header {
+        padding: 0.5rem 0 !important;
+        width: 100% !important;
+    }
+    
+    .header-content {
+        flex-direction: column !important;
+        gap: 0.8rem !important;
+        padding: 0.8rem 10px !important;
+        width: 100% !important;
+    }
+    
+    .logo img {
+        height: 35px !important;
+    }
+    
+    .logo-text {
+        font-size: 1.3rem !important;
+    }
+    
+    .nav-links {
+        flex-direction: row !important;
+        gap: 0.4rem !important;
+        flex-wrap: wrap !important;
+        justify-content: center !important;
+    }
+    
+    .nav-links a {
+        padding: 0.4rem 0.8rem !important;
+        font-size: 0.8rem !important;
+        white-space: nowrap !important;
+    }
+
+    /* Footer mobile */
+    footer {
+        padding: 2rem 0 !important;
+    }
+    
+    footer p {
+        font-size: 0.8rem !important;
+        padding: 0 8px !important;
+    }
+}
+
+/* Extra Small Devices */
+@media screen and (max-width: 480px) {
+    .container {
+        padding: 0 5px !important;
+    }
+    
+    .nav-links a {
+        padding: 0.3rem 0.6rem !important;
+        font-size: 0.7rem !important;
+    }
+    
+    .logo-text {
+        font-size: 1.1rem !important;
+    }
+}
+
+/* Prevent horizontal scroll on all devices */
+@media screen and (max-width: 1200px) {
+    html, body {
+        overflow-x: hidden;
+    }
+    
+    * {
+        max-width: 100%;
+    }
+}
