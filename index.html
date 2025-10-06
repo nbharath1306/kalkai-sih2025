@@ -3088,81 +3088,201 @@
             .topic-label {
                 font-size: 0.7rem !important;
             }
-        }
-    </style>
-</head>
-<body>
-            }
-            
+
+            /* Additional Mobile Fixes */
             .stat-item {
-                padding: 1.5rem 1rem;
+                padding: 1.5rem 1rem !important;
             }
             
             .features-grid {
-                grid-template-columns: 1fr;
-                gap: 2rem;
+                grid-template-columns: 1fr !important;
+                gap: 2rem !important;
             }
             
             .feature-card {
-                padding: 2rem 1.5rem;
+                padding: 2rem 1.5rem !important;
             }
             
             .demo-container {
-                flex-direction: column;
-                gap: 2rem;
+                flex-direction: column !important;
+                gap: 2rem !important;
             }
             
             .demo-chat, .demo-stats {
-                flex: none;
-                width: 100%;
-                max-width: none;
+                flex: none !important;
+                width: 100% !important;
+                max-width: none !important;
             }
             
             .chat-messages {
-                max-height: 250px;
+                max-height: 250px !important;
             }
             
             .activity-dashboard {
-                position: relative;
-                right: auto;
-                top: auto;
-                width: 100%;
-                margin: 2rem 0;
-                font-size: 0.8rem;
+                position: relative !important;
+                right: auto !important;
+                top: auto !important;
+                width: 100% !important;
+                margin: 2rem 0 !important;
+                font-size: 0.8rem !important;
+            }
+
+            /* Hero Section Mobile Optimization */
+            .hero {
+                height: auto !important;
+                min-height: 100vh !important;
+                padding: 120px 0 60px !important;
+            }
+
+            .hero-content {
+                padding: 0 10px !important;
+            }
+
+            .hero-stats {
+                position: relative !important;
+                bottom: auto !important;
+                left: auto !important;
+                transform: none !important;
+                flex-direction: column !important;
+                gap: 1rem !important;
+                margin-top: 2rem !important;
+            }
+
+            .hero-stat {
+                padding: 1rem !important;
+                margin: 0 auto !important;
+                max-width: 200px !important;
+            }
+
+            /* Navigation Mobile Fixes */
+            .nav-links {
+                display: none !important;
+            }
+
+            .header-content {
+                justify-content: center !important;
+            }
+
+            .logo img {
+                height: 45px !important;
+            }
+
+            .logo-text {
+                font-size: 1.2rem !important;
+            }
+
+            /* Chatbot Demo Mobile */
+            .chatbot-demo {
+                margin: 2rem auto !important;
+                padding: 20px !important;
+                max-width: 95% !important;
+            }
+
+            .message-bubble {
+                padding: 10px 15px !important;
+                font-size: 0.9rem !important;
+            }
+
+            /* Tech Stack Mobile */
+            .tech-grid {
+                grid-template-columns: 1fr !important;
+                gap: 1rem !important;
+            }
+
+            .tech-item {
+                padding: 1.5rem !important;
+            }
+
+            /* Workflow Mobile */
+            .workflow-explanation {
+                grid-template-columns: 1fr !important;
+                gap: 1rem !important;
+            }
+
+            /* CTA Mobile */
+            .cta-container {
+                flex-direction: column !important;
+                gap: 1rem !important;
+            }
+
+            .cta-button, .cta-secondary {
+                padding: 15px 30px !important;
+                font-size: 1rem !important;
+                width: 100% !important;
+                max-width: 280px !important;
+                text-align: center !important;
             }
         }
 
-        /* Extra small devices */
-        @media (max-width: 480px) {
-            .hero h1 {
-                font-size: 2rem;
-                line-height: 1.2;
-            }
-            
-            .hero p {
-                font-size: 1rem;
-            }
-            
-            .section h2 {
-                font-size: 1.8rem;
-            }
-            
-            .stats-grid {
-                grid-template-columns: 1fr;
-                gap: 1rem;
-            }
-            
-            .nav-links {
-                gap: 0.5rem;
-            }
-            
-            .nav-links a {
-                padding: 0.5rem 0.8rem;
-                font-size: 0.8rem;
-            }
-            
-            .section {
-                padding: 30px 0;
+        /* Mobile Menu Styles */
+        .mobile-menu-btn {
+            display: none;
+            flex-direction: column;
+            justify-content: space-around;
+            width: 30px;
+            height: 30px;
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            z-index: 1001;
+        }
+
+        .mobile-menu-btn span {
+            width: 100%;
+            height: 3px;
+            background: #1a1a1a;
+            border-radius: 2px;
+            transition: all 0.3s ease;
+        }
+
+        .mobile-menu {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            background: rgba(255, 253, 242, 0.98);
+            backdrop-filter: blur(20px);
+            z-index: 1000;
+            padding-top: 100px;
+        }
+
+        .mobile-menu.active {
+            display: block;
+        }
+
+        .mobile-nav-links {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        .mobile-nav-links a {
+            color: #1a1a1a;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.5rem;
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .mobile-nav-links a:hover {
+            background: linear-gradient(135deg, #174D38, #4D1717);
+            color: #F2F2F2;
+            border: 2px solid #174D38;
+        }
+
+        /* Show mobile menu button on mobile */
+        @media (max-width: 768px) {
+            .mobile-menu-btn {
+                display: flex !important;
             }
         }
     </style>
@@ -3206,8 +3326,26 @@
                     <li><a href="contact.html">Contact</a></li>
                 </ul>
             </nav>
+            <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
         </div>
     </header>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <ul class="mobile-nav-links">
+            <li><a href="#hero" onclick="closeMobileMenu()">Home</a></li>
+            <li><a href="#problem" onclick="closeMobileMenu()">Problem</a></li>
+            <li><a href="#solution" onclick="closeMobileMenu()">Solution</a></li>
+            <li><a href="#demo" onclick="closeMobileMenu()">Demo</a></li>
+            <li><a href="#technology" onclick="closeMobileMenu()">Technology</a></li>
+            <li><a href="team.html" onclick="closeMobileMenu()">Team</a></li>
+            <li><a href="contact.html" onclick="closeMobileMenu()">Contact</a></li>
+        </ul>
+    </div>
 
     <!-- Hero Section -->
     <section id="hero" class="hero">
@@ -5004,6 +5142,57 @@
         const styleSheet = document.createElement('style');
         styleSheet.textContent = floatingStyles;
         document.head.appendChild(styleSheet);
+
+        // Mobile Menu Functionality
+        function toggleMobileMenu() {
+            const mobileMenu = document.getElementById('mobileMenu');
+            const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+            
+            mobileMenu.classList.toggle('active');
+            mobileMenuBtn.classList.toggle('active');
+            
+            // Prevent scrolling when menu is open
+            if (mobileMenu.classList.contains('active')) {
+                document.body.style.overflow = 'hidden';
+            } else {
+                document.body.style.overflow = '';
+            }
+        }
+
+        function closeMobileMenu() {
+            const mobileMenu = document.getElementById('mobileMenu');
+            const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+            
+            mobileMenu.classList.remove('active');
+            mobileMenuBtn.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        // Add event listeners
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+            const mobileMenu = document.getElementById('mobileMenu');
+            
+            if (mobileMenuBtn) {
+                mobileMenuBtn.addEventListener('click', toggleMobileMenu);
+            }
+            
+            // Close menu when clicking outside
+            if (mobileMenu) {
+                mobileMenu.addEventListener('click', function(e) {
+                    if (e.target === mobileMenu) {
+                        closeMobileMenu();
+                    }
+                });
+            }
+            
+            // Close menu on escape key
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape') {
+                    closeMobileMenu();
+                }
+            });
+        });
     </script>
 </body>
 </html>
